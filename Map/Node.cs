@@ -9,13 +9,13 @@ namespace MapSpace
         public string Value { get; set; }
         public Node parent;
 
-        private LinkedList<Node> children;
+        private SortedSet<Node> children;
 
-        public Node(char letter = ' ')
+        public Node(char letter = '\0')
         {
             Letter = letter;
             Value = null;
-            children = new LinkedList<Node>();
+            children = new SortedSet<Node>();
             parent = null;
         }
 
@@ -45,7 +45,7 @@ namespace MapSpace
             {
                 parent = this
             };
-            children.AddLast(child);
+            children.Add(child);
 
             return child;
         }

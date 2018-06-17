@@ -13,6 +13,11 @@ namespace MapSpace
 
         public void AddWord(string key, string value)
         {
+            if (String.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentException("Cannot add empty key");
+            }
+
             Node current = head;
 
             current = current.GetChild(key[0], true);
@@ -37,6 +42,11 @@ namespace MapSpace
         {
             var removableChild = FindChildByKey(key);
 
+            if(removableChild.Value == null)
+            {
+                throw new ArgumentException("This key is not exist");
+            }
+
             Node parent = null;
             while (parent != head)
             {
@@ -55,6 +65,11 @@ namespace MapSpace
 
         private Node FindChildByKey(string key)
         {
+            if (String.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentException("The map cannot contain an empty key");
+            }
+
             Node current = head;
 
             current = current.GetChild(key[0]);

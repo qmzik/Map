@@ -7,9 +7,9 @@ namespace MapSpace
         static void Main(string[] args)
         {
             Map trie = new Map();
-            trie["lol"] = "kek";
-            Console.WriteLine(trie["lol"]);
-            trie.Delete("lol");
+            trie["    "] = "1";
+            Console.WriteLine();
+
             Console.ReadKey();
         }
     }
