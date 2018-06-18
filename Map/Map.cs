@@ -35,7 +35,11 @@ namespace MapSpace
 
         public string FindWord(string key)
         {
-            return FindChildByKey(key).Value;
+            var foundedChild = FindChildByKey(key);
+            if (foundedChild.Value == null)
+                throw new ArgumentException("Key is not found");
+
+            return foundedChild.Value;
         }
 
         public void Delete(string key)

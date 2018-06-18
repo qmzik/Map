@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MapSpace
 {
-    public class Node
+    public class Node : IComparable<Node>
     {
         public char Letter { get; private set; }
         public string Value { get; set; }
@@ -52,7 +52,26 @@ namespace MapSpace
 
         public void DeleteChild(Node child)
         {
-            children.Remove(child);
+            child.Value = null;
+            if(child.children.Count == 0)
+                children.Remove(child);
+        }
+
+        public int CompareTo(Node other)
+        {
+            if (Letter > other.Letter)
+            {
+                return 1;
+            }
+            else if(Letter < other.Letter)
+            {
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
+
         }
     }
 }

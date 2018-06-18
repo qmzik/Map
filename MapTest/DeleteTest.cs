@@ -14,12 +14,14 @@ namespace MapTest
         {
             map = new Map();
             map["0"] = "000";
+            map["00"] = "000";
         }
 
         [TestMethod]
         public void CorrectDeleting()
         {
             map.Delete("0");
+            Assert.AreEqual("000", map["00"]);
             Assert.ThrowsException<ArgumentException>(() => map["0"]);
         }
 

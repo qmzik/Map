@@ -6,10 +6,11 @@ namespace MapSpace
     {
         static void Main(string[] args)
         {
-            Map trie = new Map();
-            trie["    "] = "1";
-            Console.WriteLine();
-
+            Map map = new Map();
+            map["0"] = "000";
+            map["00"] = "000";
+            map.Delete("0");
+            Console.WriteLine(map["0"]);
             Console.ReadKey();
         }
     }
