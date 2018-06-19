@@ -9,7 +9,7 @@ namespace MapSpace
         public string Value { get; set; }
         public Node parent;
 
-        private SortedSet<Node> children;
+        public SortedSet<Node> children;
 
         public Node(char letter = '\0')
         {
@@ -52,7 +52,6 @@ namespace MapSpace
 
         public void DeleteChild(Node child)
         {
-            child.Value = null;
             if(child.children.Count == 0)
                 children.Remove(child);
         }

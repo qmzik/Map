@@ -51,9 +51,14 @@ namespace MapSpace
                 throw new ArgumentException("This key is not exist");
             }
 
+            removableChild.Value = null;
             Node parent = null;
             while (parent != head)
             {
+                if(removableChild.children.Count != 0)
+                {
+                    break;
+                }
                 parent = removableChild.parent;
                 parent.DeleteChild(removableChild);
                 removableChild = parent;
