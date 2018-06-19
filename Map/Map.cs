@@ -53,14 +53,15 @@ namespace MapSpace
 
             removableChild.Value = null;
             Node parent = null;
-            while (parent != head)
+            for(int i = key.Length - 1; i != 0; i--)
             {
-                if(removableChild.children.Count != 0)
+                if (removableChild.children.Count != 0)
                 {
                     break;
                 }
+
                 parent = removableChild.parent;
-                parent.DeleteChild(removableChild);
+                parent.children.Remove(key[i]);
                 removableChild = parent;
             }
         }

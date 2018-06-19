@@ -10,6 +10,7 @@ namespace MapSpace
             map["mam"] = "000";
             map["mama"] = "000";
             map.Delete("mam");
+            Console.WriteLine(map["mama"]);
             Console.ReadKey();
         }
     }
