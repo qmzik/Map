@@ -9,13 +9,13 @@ namespace MapSpace
         public string Value { get; set; }
         public Node parent;
 
-        public SortedList<char, Node> children;
+        public SortedDictionary<char, Node> children;
 
         public Node(char letter = '\0')
         {
             Letter = letter;
             Value = null;
-            children = new SortedList<char, Node>();
+            children = new SortedDictionary<char, Node>();
             parent = null;
         }
 
